@@ -1,0 +1,16 @@
+.c-button {
+  background-color: #3751ff;
+  color: white;
+  min-height: 50px;
+  border: honeydew;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    background-color: #8e8e8e;
+  }
+  &:disabled {
+    background-color: #8e8e8e;
+  }
+}

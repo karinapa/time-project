@@ -1,0 +1,13 @@
+<div class="c-modal">
+  <div class="c-modal__container">
+    <div class="c-modal__close-container">
+      <img (click)="closeModal()" class="c-modal__close" src="close.svg" />
+    </div>
+    <div class="c-modal__title"></div>
+    <img *ngIf="!isWarning" class="c-modal__icon" src="icon_check.svg" />
+    <img *ngIf="isWarning" class="c-modal__icon" src="icon_close.svg" />
+    <div class="c-modal__content">
+      <p>{{ text }}</p>
+    </div>
+  </div>
+</div>

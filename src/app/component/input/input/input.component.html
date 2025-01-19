@@ -1,0 +1,20 @@
+<div [ngClass]="errors.length > 0 ? 'error c-input-group' : 'c-input-groupd'">
+  <label class="c-input-group__label" for="fname">{{ label }}:</label>
+  <input
+    (change)="validateInput()"
+    (focusout)="validateInput()"
+    class="c-input-group__input"
+    type="text"
+    id="fname"
+    name="fname"
+    [min]="min"
+    [max]="max"
+    [name]="name"
+    [required]="required"
+    placeholder=""
+    [(ngModel)]="input"
+  />
+  <small class="c-input-group__error" *ngFor="let error of errors"
+    >{{ error }}
+  </small>
+</div>

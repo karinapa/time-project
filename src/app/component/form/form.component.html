@@ -1,0 +1,69 @@
+<div class="c-form">
+  <h2 class="c-form__title">確認したい時刻を入力してください。</h2>
+  <form>
+    <div class="row c-form__input-group">
+      <div class="col-12">
+        <app-input
+          [label]="timeLabel"
+          [min]="0"
+          [max]="23"
+          [required]="true"
+          regex="^([0-9]{1}|([1-9]{1}[0-9]{1}))$"
+          (validInput)="setIsDisabledButton()"
+          name="time"
+          [(input)]="time"
+          (inputChange)="time = $any($event)"
+          [(valid)]="validTime"
+          (validChange)="validTime = $any($event)"
+        ></app-input>
+      </div>
+      <div class="col-12">
+        <app-input
+          [label]="initTimeLabel"
+          [min]="0"
+          [max]="23"
+          [required]="true"
+          regex="^([0-9]{1}|([1-9]{1}[0-9]{1}))$"
+          (validInput)="setIsDisabledButton()"
+          name="initTime"
+          [(input)]="initTime"
+          (inputChange)="initTime = $any($event)"
+          [(valid)]="validInitTime"
+          (validChange)="validInitTime = $any($event)"
+        ></app-input>
+      </div>
+      <div class="col-12">
+        <app-input
+          [label]="endTimeLabel"
+          [min]="0"
+          [max]="23"
+          [required]="true"
+          regex="^([0-9]{1}|([1-9]{1}[0-9]{1}))$"
+          (validInput)="setIsDisabledButton()"
+          name="endTime"
+          [(input)]="endTime"
+          (inputChange)="endTime = $any($event)"
+          [(valid)]="validEndTime"
+          (validChange)="validEndTime = $any($event)"
+        ></app-input>
+      </div>
+      <div class="col-12">
+        <input
+          type="button"
+          value="確認"
+          (click)="clickButton()"
+          [disabled]="isDisabledButton"
+          class="c-button"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+
+<app-modal
+  *ngIf="showModal"
+  [text]="modalText"
+  [showModal]="showModal"
+  (showModalChange)="showModal = $any($event)"
+  [isWarning]="isWarning"
+></app-modal>

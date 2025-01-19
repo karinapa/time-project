@@ -1,0 +1,13 @@
+.c-form {
+  max-width: 500px;
+  margin: 0 auto;
+  &__title {
+    color: #3751ff;
+    font-size: 30px;
+  }
+  &__input-group {
+    width: 150px;
+    margin: 0 auto;
+    gap: 16px;
+  }
+}

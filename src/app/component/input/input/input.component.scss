@@ -1,0 +1,38 @@
+.c-input-group {
+  padding: 16px 0px 16px 0px;
+  &__label {
+    width: 100%;
+    color: #878484;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  &__input {
+    width: 100%;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid #3751ff;
+    height: 40px;
+    &:hover,
+    &:focus-visible {
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      outline: none;
+    }
+    &:focus {
+      border-bottom: 2px solid #3751ff;
+    }
+  }
+  &__error {
+    color: red;
+    font-size: 10px;
+    display: flex;
+    padding: 8px 0;
+  }
+  &.error {
+    .c-input-group__input {
+      border-bottom: 1px solid red;
+    }
+  }
+}
