@@ -20,4 +20,17 @@ describe('FormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should isIncludeTime', () => {
+    component.isIncludeTime('2', '3', '5');
+  });
+
+  it('should isIncludeTime', () => {
+    component.isIncludeTime('2', '5', '5');
+  });
+
+  it('should isIncludeTime', () => {
+    component.isIncludeTime('6', '5', '22');
+  });
+  
 });

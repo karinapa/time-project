@@ -20,4 +20,13 @@ describe('InputComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should validateInput', () => {
+    component.validateInput();
+  });
+
+  it('should emitValue true', () => {
+    component.emitValue(true);
+  });
+  
 });
