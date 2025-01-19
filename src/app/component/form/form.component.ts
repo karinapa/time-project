@@ -24,7 +24,7 @@ export class FormComponent {
   validTime: boolean = false;
   validInitTime: boolean = false;
   validEndTime: boolean = false;
-  isDisabledButton: boolean = false;
+  isDisabledButton: boolean = true;
   showModal: boolean = false;
   timeLabel: string = TIME_LABEL;
   initTimeLabel: string = INITTIME_LABEL;
