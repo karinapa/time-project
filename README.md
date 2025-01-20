@@ -1,19 +1,3 @@
-github profile markdown generator logo
-GitHub Profile README Generator
-Star this repo
-22164
-Fork on GitHub
-7105
-
-back to edit
-
-copy-markdown
-
-download markdown
-
-download backup
-
-preview
 <h1 align="center">Hi 👋, I'm 大谷カリナ</h1>
 <h3 align="center">フルスタックエンジニア</h3>
 
