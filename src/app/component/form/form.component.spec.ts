@@ -21,16 +21,49 @@ describe('FormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should isIncludeTime', () => {
-    component.isIncludeTime('2', '3', '5');
+  it('should isIncludeTime (0, 23, 1)', () => {
+    let isTimeInclude = component.isIncludeTime(0, 23, 1);
+    expect(isTimeInclude).toEqual(true);
   });
 
-  it('should isIncludeTime', () => {
-    component.isIncludeTime('2', '5', '5');
+  it('should isIncludeTime (0, 10, 6)', () => {
+    let isTimeInclude = component.isIncludeTime(0, 10, 6);
+    expect(isTimeInclude).toEqual(true);
   });
 
-  it('should isIncludeTime', () => {
-    component.isIncludeTime('6', '5', '22');
+  it('should isIncludeTime (23, 10, 6)', () => {
+    let isTimeInclude = component.isIncludeTime(23, 10, 6);
+    expect(isTimeInclude).toEqual(true);
+  });
+
+  it('should isIncludeTime (4, 1, 9)', () => {
+    let isTimeInclude = component.isIncludeTime(4, 1, 9);
+    expect(isTimeInclude).toEqual(true);
+  });
+
+  it('should isIncludeTime (0, 12, 6)', () => {
+    let isTimeInclude = component.isIncludeTime(0, 12, 6);
+    expect(isTimeInclude).toEqual(true);
+  });
+
+  it('should isIncludeTime (1, 1, 9)', () => {
+    let isTimeInclude = component.isIncludeTime(1, 1, 9);
+    expect(isTimeInclude).toEqual(true);
   });
   
+  it('should isIncludeTime (0, 1, 23)', () => {
+    let isTimeInclude = component.isIncludeTime(0, 1, 23);
+    expect(isTimeInclude).toEqual(false);
+  });
+
+  it('should isIncludeTime (23, 1, 23)', () => {
+    let isTimeInclude = component.isIncludeTime(23, 1, 23);
+    expect(isTimeInclude).toEqual(false);
+  });
+
+  it('should isIncludeTime (1, 20, 23)', () => {
+    let isTimeInclude = component.isIncludeTime(1, 20, 23);
+    expect(isTimeInclude).toEqual(false);
+  });
 });
+

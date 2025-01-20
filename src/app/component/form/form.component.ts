@@ -51,9 +51,9 @@ export class FormComponent {
    */
   clickButton(): void {
     let isTimeInclude = this.isIncludeTime(
-      this.time,
-      this.initTime,
-      this.endTime
+      Number(this.time),
+      Number(this.initTime),
+      Number(this.endTime)
     );
     this.setSettingModal(isTimeInclude);
     this.showModal = true;
@@ -66,18 +66,20 @@ export class FormComponent {
    * @param endTime
    * @returns
    */
-  isIncludeTime(time: string, initTime: string, endTime: string): boolean {
+  isIncludeTime(time: number, initTime: number, endTime: number): boolean {
     if (initTime === endTime) {
-      this.modalText = MODAL_MESSAGE_OK;
       return true;
     }
-    let number = Number(initTime);
-    let ar = [];
-    while (number !== Number(endTime)) {
-      ar.push(number);
-      number = number === 23 ? 0 : number + 1;
+
+    if(initTime < endTime && time >= initTime && time < endTime) {
+      return true;
     }
-    return ar.includes(Number(time)) ? true : false;
+
+    if(initTime > endTime && (time < endTime || time > initTime)) {
+      return true;
+    }
+
+    return false;
   }
 
   /**
